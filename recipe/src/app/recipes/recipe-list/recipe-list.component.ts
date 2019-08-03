@@ -7,12 +7,13 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
+  
   recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is simply a test','http://www.kroger.com/asset/5d1504079da07c3a432d2e9e?data=1'),
-    new Recipe('A Test Recipe', 'This is simply a test','http://www.kroger.com/asset/5d1504079da07c3a432d2e9e?data=1')
-  ];  
+    new Recipe('A Test Recipe','this is simply a test','https://cdn.loveandlemons.com/wp-content/uploads/2019/07/stuffed-zucchini-recipe-1-2.jpg'),
+    new Recipe('A Test Recipe','this is simply a test','https://cdn.loveandlemons.com/wp-content/uploads/2019/07/stuffed-zucchini-recipe-1-2.jpg')
 
+  ];
+  
   constructor() { }
 
   ngOnInit() {
