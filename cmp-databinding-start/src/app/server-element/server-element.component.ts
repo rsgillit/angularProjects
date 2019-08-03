@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, 
+  AfterContentChecked, AfterViewInit, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -6,13 +7,53 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ServerElementComponent implements OnInit {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck, 
+AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
 
   @Input('srvElement') element: { type: string, name: string, content: string };
+  @Input() name:string;
+  @ViewChild('heading',{static: true}) header: ElementRef;
+  
 
-  constructor() { }
+
+  constructor() { 
+    console.log("constructor called!")
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("ngOnChanges called!");
+    console.log(changes)
+  }
 
   ngOnInit() {
+    console.log("ngOnInit called!");
+    console.log(this.header.nativeElement.content); 
+  }
+
+  ngDoCheck(){
+    console.log("ngDoCheck  called!")
+
+  }
+
+  ngAfterContentInit(){
+    console.log("ngAfterContentInit  called!")
+
+  }
+
+  ngAfterContentChecked(){
+    console.log("ngAfterContentChecked  called!")
+
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit  called!")
+
+  }
+
+  ngAfterViewChecked(){
+    console.log("ngAfterViewChecked  called!")
+    console.log(this.header.nativeElement.content); 
+
   }
 
 }
