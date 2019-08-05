@@ -1,0 +1,10 @@
+<app-game-control
+  (gameStarted)="gameStarted($event)" ></app-game-control>
+<div *ngFor="let countOdd of countList" >
+    <app-odd *ngIf="countOdd%2===1" [count]="countOdd"></app-odd>
+    <app-even *ngIf="countOdd%2===0" [count]="countOdd"></app-even>
+</div>  
+
+<!-- <app-odd *ngFor="let countOdd of countListOdd" [count]="countOdd"></app-odd>
+<app-even *ngFor="let countEven of countListEven" [count]="countEven"></app-even> -->
+ 

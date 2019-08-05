@@ -7,6 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+  countList : number[] = [];
+  gameStarted(event: number) {
+    console.log("gameStarted, counter: ",event);
+    //if(event % 2 === 0 ){
+      this.countList.push(event);
+      //console.log("even");
+    //} else {
+      //this.countListOdd.push(event);
+      //console.log("Odd");
+
+   // }
+  }
+
+  gameStopped() {
+    console.log("gameStopped");
+
+  }
 
   
 }
