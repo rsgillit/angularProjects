@@ -35,7 +35,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterContentChecked, OnDes
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked called");
   ngDoCheck(){
-    console.log("ngDoCheck  call ed!")
+    console.log("ngDoCheck  called!")
 
   }
 
